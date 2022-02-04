@@ -16,4 +16,4 @@ DmxController.ConnectionClose(); //To disconnect the DMX
 
 DmxController.ChangeMultiIntensity(); //For Z-350 Fazer which has fog and fan
 
-DmxController.ChangeSingleIntensity(); //For Natural wind N6 which has only fan
+DmxController.ChangeSingleIntensity(); //For Natural wind N6 which is one fan
