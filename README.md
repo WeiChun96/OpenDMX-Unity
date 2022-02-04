@@ -7,6 +7,7 @@ https://ftdichip.com/drivers/d2xx-drivers/
 DMX Equipment used : Z-350 Fazer and Natural wind N6
 
 Channel 1 for Z-350 Fazer
+
 Channel 2 for Natural wind N6
 
 DmxController.ConnectionOpen(); //To connect to the DMX
