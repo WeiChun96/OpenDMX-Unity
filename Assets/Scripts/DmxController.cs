@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class DmxController : IDisposable
+public class DmxController
 {
     public int FogIntensity { get; set; }
     public int FanIntensity { get; set; }
@@ -162,17 +162,17 @@ public class DmxController : IDisposable
         WriteBuffer();
     }
 
-    public void Dispose()
-    {
-        //IsDisposed = true;
+    //public void Dispose()
+    //{
+    //    IsDisposed = true;
 
-        if (IsOpen)
-        {
-            ClearBuffer();
-            FTD2XX.ResetDevice(handle);
-            FTD2XX.Close(handle);
-        }
-    }
+    //    if (IsOpen)
+    //    {
+    //        ClearBuffer();
+    //        FTD2XX.ResetDevice(handle);
+    //        FTD2XX.Close(handle);
+    //    }
+    //}
     public void ConnectionOpen()
     {
         Debug.Log("Attempting to Connect to Machine");
@@ -185,8 +185,13 @@ public class DmxController : IDisposable
     }
     public void ConnectionClose()
     {
-        Dispose();
-        Debug.Log("Connection close");
+        if (IsOpen)
+        {
+            ClearBuffer();
+            FTD2XX.ResetDevice(handle);
+            FTD2XX.Close(handle);
+            Debug.Log("Connection Close")
+        }
     }
     public void ChangeMultiIntensity()
     {
